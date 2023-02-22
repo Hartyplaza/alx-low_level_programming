@@ -2,11 +2,13 @@
 
 /**
  * _islower - this fuction prints lowercase,
- * alphabet
  *
- * Return: 1 if lowercase,
+ * @c: parameter to be printed
+ *
+ * Return: 1 if its a lowercase,
  * and 0 otherwise
  */
+
 
 int _islower(int c)
 {
