@@ -12,32 +12,29 @@
 
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *new;
-	listint_t *temp;
+	listint_t *curr = *head;
+	listint_t *node;
 
-	(void)temp;
-
-	new = malloc(sizeof(listint_t));
-
-	if (new == NULL)
+	/* Allocate space for the new node */
+	node = malloc(sizeof(listint_t));
+	if (!node)
 		return (NULL);
 
-	new->n = n;
-	new->next = NULL;
-	temp = *head;
+	/* Assign values to members of the struct */
+	node->n = n;
+	node->next = NULL;
+
+	/* If the head points to null, add the new node as the first element */
 	if (*head == NULL)
 	{
-		*head = new;
-	}
-	else
-	{
-		while (temp->next != NULL)
-
-{
-			temp = temp->next;
-		}
-		temp->next = new;
+		*head = node;
+		return (node);
 	}
 
-	return (*head);
+	/* Find the last element, then let it point to the new node */
+	while (curr->next)
+		curr = curr->next;
+	curr->next = node;
+
+	return (node);
 }
