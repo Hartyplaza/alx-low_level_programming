@@ -1,4 +1,7 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 /**
  * free_listint - free linked list
@@ -10,13 +13,18 @@
 
 void free_listint(listint_t *head)
 {
-	listint_t *temp;
+	listint_t *curr = head;
+	listint_t *prev = head;
 
-	while (temp)
+	if (!head)
+		return;
+
+	while (curr)
 	{
-	temp = head->next;
-	free(temp);
-	temp = head;
+		curr = curr->next;
+
+		free(prev);
+
+		prev = curr;
 	}
 }
-
