@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 /**
- * fre_ listint2 - frees a linklist and set the head to NULL
+ * free_listint2 - frees a linklist and set the head to NULL
  *
  * @head: pointer to the listint_t list to be freed
  *
@@ -12,6 +12,7 @@
  */
 
 void free_listint2(listint_t **head)
+
 {
 	listint_t *prev;
 	listint_t *curr;
@@ -31,3 +32,4 @@ void free_listint2(listint_t **head)
 
 	*head = NULL;
 }
+
