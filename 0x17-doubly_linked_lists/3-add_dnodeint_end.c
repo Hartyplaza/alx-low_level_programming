@@ -1,4 +1,5 @@
 #include "lists.h"
+
 /**
  * add_dnodeint_end - adds new node at the end of the list
  * @head: double pointer
@@ -28,3 +29,4 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	addrs_new_node->prev = last_node;
 	return (addrs_new_node);
 }
+
